@@ -76,9 +76,9 @@
             </div>
           </div>
           
-          <a href="login.html" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">login</a>
+          <a href="{{url('/login')}}" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">login</a>
           
-          <a href="signup.html" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">signup</a>
+          <a href="{{url('/signup')}}" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">signup</a>
         </nav>
 
      <!-- HOME -->

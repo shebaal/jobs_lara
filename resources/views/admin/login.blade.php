@@ -95,9 +95,10 @@
                <div class="row">
 
                     <div class="col-md-6 col-sm-12">
-                         <form id="contact-form" role="form" action="" method="post">
+                         <form id="contact-form" role="form" action="{{route('do_login')}}" method="POST">
+                              @csrf
                               <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" placeholder="Enter full name" name="name" required>
+                                   <input type="email" class="form-control" placeholder="Enter email" name="email" required>
                     
                                    <input type="password" class="form-control" placeholder="Enter password " name="pass" required>
 

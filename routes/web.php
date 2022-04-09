@@ -1,6 +1,10 @@
 <?php
+namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,43 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('web/home');
-});
+Route::get('/', [homeController::class, 'index']);
+Route::get('/about', [homeController::class, 'about']);
+Route::get('/contact', [contactController::class, 'contact']);
+Route::get('/jobdetails', [jobDetailsController::class, 'jobdetails']);
+Route::get('/joblisting', [jobListingController::class, 'joblisting']);
+Route::get('/service', [ServicesController::class, 'service']);
+Route::get('/team', [teamController::class, 'team']);
+Route::get('/makecv', [makeCvController::class, 'makecv']);
 
 
-Route::get('/about', function () {
-    return view('web/about-us');
-});
+// Dashboard
 
-Route::get('/contact', function () {
-    return view('web/contact');
-});
-
-Route::get('/jobDetails', function () {
-    return view('web/job-details');
-});
-
-Route::get('/joblisting', function () {
-    return view('web/job-listing');
-});
-
-Route::get('/login', function () {
-    return view('web/login');
-});
-
-Route::get('/makecv', function () {
-    return view('web/makecv');
-});
-
-Route::get('/sginup', function () {
-    return view('web/sginup');
-});
-
-Route::get('/team', function () {
-    return view('web/team');
-});
-
-Route::get('/services', function () {
-    return view('web/testimonials');
-});
+Route::get('/showlogin', [AuthController::class, 'showlogin']);
+Route::post('/login', [AuthController::class, 'login'])->name('do_login');
+Route::get('/signup', [AuthController::class, 'signup']);
+Route::get('/save_customer', [teamController::class, 'addCustomer']);
+Route::get('/show_customer/{id}', [teamController::class, 'selectCustomer']);
+Route::get('/allcustomers', [teamController::class, 'listAll']);
