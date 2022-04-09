@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-     <title>find Jop</title>
+     <title>Find Job</title>
 
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -12,6 +12,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
      <link rel="stylesheet" href="css/bootstrap.min.css">
+     
+     <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" href="css/font-awesome.min.css">
      <link rel="stylesheet" href="css/owl.carousel.css">
      <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -19,11 +21,14 @@
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/style.css">
 
+     <!-- MAIN CSS -->
+     
+
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
      <!-- PRE LOADER -->
-      <section class="preloader">
+     <section class="preloader">
           <div class="spinner">
                <span class="spinner-rotate"></span>
           </div>
@@ -32,6 +37,7 @@
 
      <!-- MENU -->
 
+ 
      <nav class="navbar bg-white sticky-top navbar-expand-lg navbar-light">
           <div class="container-fluid">
             <a class="navbar-brand p-3 text-primary" href="#">Find Job</a>
@@ -70,94 +76,61 @@
             </div>
           </div>
           
-          <a href="login.html" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">login</a>
+          <a href="{{route('showlogin')}}" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">login</a>
           
-          <a href="signup.html" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">signup</a>
+          <a href="{{route('create_user')}}" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">signup</a>
         </nav>
 
-     <section>
-          <div class="container">
-               <div class="text-center">
-                    <h1>sign up</h1>
+     <!-- HOME -->
+     <section id="home">
+          <div class="row">
+               <div class="owl-carousel owl-theme home-slider">
+                    <div class="item item-first">
+                         <div class="caption">
+                              <div class="container">
+                                   <div class="col-md-6 col-sm-12">
+                                        <h1>We help all people get jobs</h1>
+                                        <h3>Find your next job here</h3>
+                                        <!-- <a href="jobs.html" class="section-btn btn btn-default">Browse Jobs</a> -->
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
 
-                    <br>
+                    <div class="item item-second">
+                         <div class="caption">
+                              <div class="container">
+                                   <div class="col-md-6 col-sm-12">
+                                        <h1>Finally an easer way to find job</h1>
+                                        <h3>What are you wating for?</h3>
+                                        <!-- <a href="jobs.html" class="section-btn btn btn-default">Browse Jobs</a> -->
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
 
-                    <p class="lead">we love conversations. let us talk!</p>
+                    <div class="item item-third">
+                         <div class="caption">
+                              <div class="container">
+                                   <div class="col-md-6 col-sm-12">
+                                        <h1>Easiest way to find work</h1>
+                                        <h3>All the best</h3>
+                                        <!-- <a href="jobs.html" class="section-btn btn btn-default">Browse Jobs</a> -->
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
                </div>
           </div>
      </section>
 
-
-     <!-- CONTACT -->
-     <section id="contact">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-6 col-sm-12">
-                         {{-- @if ($errors->any())
-                         @foreach ($errors->all() as $err)
-                         <p class="alert alert-danger">{{ $err }}</p>
-                             
-                         @endforeach
-                             
-                         @endif --}}
-                         <form id="contact-form" role="form" action="{{route('save_user')}}" method="POST">
-
-                              @csrf
-
-                     
-
-                              <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" placeholder="Enter full name" name="name" required>
-                                   
-                                   @error('name')
-                                   <span class="alert alert-danger">{{ $message }}</span>
-                                             @enderror
-
-                                             
-                                   <input type="email" class="form-control" placeholder="Enter email " name="email" required>
-                    
-                                   @error('email')
-                                   <span class="alert alert-danger">{{ $message }}</span>
-                                             @enderror
-
-                                             
-                                   <input type="password" class="form-control" placeholder="Enter password " name="pass" required>
-								   
-                                   @error('pass')
-                                   <span class="alert alert-danger">{{ $message }}</span>
-                                             @enderror
-          
-
-                                   <input type="password" class="form-control" placeholder="confirm password " name="confirm" required>
-
-                                   @error('confirm')
-                                   <span class="alert alert-danger">{{ $message }}</span>
-                                             @enderror
-          
-
-                                    </div>
-
-                              <div class="col-md-4 col-sm-12">
-                                   <input type="submit" class="form-control" name="send message" value="sgin up">
-                              </div>
-
-                         </form>
-                    </div>
-
-                    <div class="col-md-6 col-sm-12">
-                         <div class="contact-image">
-                              <img src="images/contact-1-600x400.jpg" class="img-responsive" alt="">
-                         </div>
-                    </div>
-
-               </div>
-          </div>
-     </section>       
-
+     <main>
+       @yield('content')
+{{-- here --}}
+     </main>
 
      <!-- FOOTER -->
-   <footer id="footer">
+     <footer id="footer">
           <div class="container">
                <div class="row">
 
@@ -224,13 +197,23 @@
           </div>
      </footer>
 
-
      <!-- SCRIPTS -->
-     <script src="js/jquery.js"></script>
+     
+     <!-- <script type="text/javascript" src="{{asset('/js/jquery.js')}}"></script>
+     <script type="text/javascript" src="{{asset('/js/bootstrap.min.js')}}"></script>
+     <script type="text/javascript" src="{{asset('/js/owl.carousel.min.js')}}"></script>
+     <script type="text/javascript" src="{{asset('/js/smoothscroll.js')}}"></script>
+     <script type="text/javascript" src="{{asset('/js/custom.js')}}"></script>
+    -->
+
+    <script src="js/jquery.js"></script>
      <script src="js/bootstrap.min.js"></script>
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
+
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

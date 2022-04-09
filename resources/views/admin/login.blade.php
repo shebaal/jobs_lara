@@ -95,12 +95,29 @@
                <div class="row">
 
                     <div class="col-md-6 col-sm-12">
+                         
+                         @if ($errors->any())
+                         @foreach ($errors->all() as $err)
+                         <p class="alert alert-danger">{{ $err }}</p>
+                             
+                         @endforeach
+                             
+                         @endif
                          <form id="contact-form" role="form" action="{{route('do_login')}}" method="POST">
                               @csrf
                               <div class="col-md-12 col-sm-12">
+                                
                                    <input type="email" class="form-control" placeholder="Enter email" name="email" required>
-                    
+                                   @error('email')
+                         <span class="alert alert-danger">{{ $message }}</span>
+                                   @enderror
+
                                    <input type="password" class="form-control" placeholder="Enter password " name="pass" required>
+                                   @error('pass')
+                       
+                                   <p class="alert alert-danger">{{ $message }}</p>
+                                  
+                                   @enderror
 
                                     </div>
 

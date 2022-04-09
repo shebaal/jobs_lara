@@ -1,6 +1,6 @@
 <?php
+
 namespace App\Http\Controllers;
-namespace App\Http\Controllers\admin;
 
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [homeController::class, 'index']);
+Route::get('/', [homeController::class, 'index'])->name('index');
 Route::get('/about', [homeController::class, 'about']);
 Route::get('/contact', [contactController::class, 'contact']);
 Route::get('/jobdetails', [jobDetailsController::class, 'jobdetails']);
@@ -29,9 +29,14 @@ Route::get('/makecv', [makeCvController::class, 'makecv']);
 
 // Dashboard
 
-Route::get('/showlogin', [AuthController::class, 'showlogin']);
+Route::get('/showlogin', [AuthController::class, 'showlogin'])->name('showlogin');
 Route::post('/login', [AuthController::class, 'login'])->name('do_login');
-Route::get('/signup', [AuthController::class, 'signup']);
+
+
+Route::get('/signup', [AuthController::class, 'signup'])->name('create_user');
+Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
+
+
 Route::get('/save_customer', [teamController::class, 'addCustomer']);
 Route::get('/show_customer/{id}', [teamController::class, 'selectCustomer']);
 Route::get('/allcustomers', [teamController::class, 'listAll']);

@@ -43,7 +43,7 @@
        </div>
      </div>
      
-     <a href="signup.html" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">Back</a>
+     <a href="{{url('/')}}" class="btn btn-primary px-3 d-none d-lg-flex text-white m-1">Back</a>
    </nav>
 
 <!-- HOME -->

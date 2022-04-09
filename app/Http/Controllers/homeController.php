@@ -8,12 +8,12 @@ class homeController extends Controller
 {
     public function index()
     {
-        return view('web/home');
+        return view('web.home');
     }
 
     public function about()
     {
-        return view('web/about-us');
+        return view('web.about-us');
     }
 
 }
